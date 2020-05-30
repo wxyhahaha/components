@@ -1,0 +1,137 @@
+.export-data-box{
+    display: flex;
+}
+.left-side{
+    width: 220px;
+    padding: 20px 10px;
+    margin: -24px 0 -24px -24px;
+    min-height: 600px;
+    max-height: 600px;
+    font-size: 12px;
+    overflow: auto;
+    border-right: 1px solid rgba(235,241,255,1);
+    ul {
+        padding: 0;
+    }
+    li {
+        list-style: none;
+    }
+    h4{
+        font-weight: 800;
+        font-size: 12px;
+        font-family: MicrosoftYaHei-Bold;
+    }
+    .item-side{
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding:  10px;
+        color: #5A8CFF;
+        transition: all ease .2s;
+        &:hover{
+            background-color: #EBF1FF;
+        }
+    }
+}
+.right-content{
+    margin: -24px -24px -24px 0;
+    padding: 20px;
+    flex: 1;
+    overflow: auto;
+    min-height: 600px;
+    max-height: 600px;
+    nz-checkbox-wrapper{
+            width: 100%;
+        }
+    .title{
+        font-weight: 800;
+        color: #333;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        padding: 0 0 0 10px;
+        margin-bottom: 0 !important;
+    }
+    .title-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 30px;
+    }
+    .all-field-checkbox{
+        margin-bottom: 15px;
+    }
+    .checkboxs-wrapper{
+        margin-bottom: 20px;
+    }
+    .checkboxs-wrapper{
+        .label-item{
+            margin-top: 10px;
+
+        }
+        .common-options {
+            padding: 0 0 0 10px;
+        }
+        .exrea {
+            &--exrea-options {
+                padding: 10px 20px;
+                background:rgba(243,243,243,1);
+            }
+            &--item {
+                margin-bottom: 10px;
+            }
+            &--choose-current{
+                background:rgba(243,243,243,1);
+                
+            }
+            &--choose-exrea {
+                width:80px;
+                height:30px;
+                text-align: center;
+                line-height: 30px;
+                color: #5A8CFF;
+                cursor: pointer;
+                &:hover{
+                    opacity: .9;
+                }
+            } 
+        }
+       
+    }
+    .title-wrapper{
+        display:flex;
+        justify-content: space-between;
+        transition: all ease .2s;
+        margin-top: 10px;
+        &:hover{
+            background:rgba(243,243,243,1);
+        }
+    }
+}
+.svg-del{
+    fill: #5A8CFF;
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    &:hover{
+        opacity: 0.9;
+    }
+}
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  /* 滚动槽 */
+  ::-webkit-scrollbar-track {
+    background: #fff;
+  }
+  
+  /* 滚动条滑块 */
+  ::-webkit-scrollbar-thumb {
+    background: #eee;
+  }

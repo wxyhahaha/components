@@ -1,0 +1,46 @@
+<div class="export-data-box">
+    <div class="left-side">
+        <h4>{{leftSideTitle}}</h4>
+        <br>
+        <ul>
+            <ng-container *ngFor="let item of itemSide">
+                <li >
+                    <div class="item-side">{{item.label}} 
+                        <span class="icon svg-del" (click)="delItem(item)">
+                            <svg id="tps-icon-add" viewBox="0 0 1024 1024" width="100%" height="100%"><path d="M896 448H576V128H448v320H128v128h320v320h128V576h320z" fill="#5A8CFF"></path></svg>
+                        </span>
+                    </div>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+<div class="right-content">
+    <nz-checkbox-wrapper style="width: 100%;" (nzOnChange)="checkBoxChange()">
+        <div class="all-field-checkbox"><label class="title" nz-checkbox nzValue="allField" (ngModelChange)="allCheckedChange($event)" [(ngModel)]="allChecked" [nzIndeterminate]="allFieldIndeterminate">所有字段</label></div>
+        <ng-container *ngFor="let item of collection">
+            <div class="checkboxs-wrapper">
+                <div class="title-wrapper">
+                    <label class="title" nz-checkbox nzValue="sales"  (ngModelChange)="fieldTitleCheckedChange($event,item)" [(ngModel)]="item.allChecked" [nzIndeterminate]="item.indeterminate">{{item.title}}{{item.chooseExreaOptions}}</label>
+                    <div *ngIf="item.exreaOptions" [ngClass]="{'exrea--choose-exrea': true,'exrea--choose-current': item.exreaOptionsShow}" (click)="item.exreaOptionsShow = !item.exreaOptionsShow">{{exreaTitle}}</div>
+                </div>
+                <div class="exrea--exrea-options" *ngIf="item.exreaOptionsShow">
+                    <nz-checkbox-wrapper style="width: 100%;" (nzOnChange)="exreaOptionsLogs($event,item)">
+                        <div nz-row>
+                            <ng-container *ngFor="let item1 of item.exreaOptions">
+                                <div nz-col nzSpan="4" class="exreaOptions--item"><label nz-checkbox [nzValue]="item1.label" [(ngModel)]="item1.checked" (ngModelChange)="exreaOptionsCheckedChange(item1,item)" [nzDisabled]="item1.disabled">{{item1.label}}</label></div>
+                            </ng-container>
+                        </div>
+                    </nz-checkbox-wrapper>
+                </div>
+
+                <div nz-row  class="common-options">
+                    <ng-container *ngFor="let item2 of item.options">
+                        <div class="label-item" nz-col nzSpan="6"><label nz-checkbox [(ngModel)]="item2.checked" (ngModelChange)="checkedChange(item2, item)" [nzValue]="item2.label"  [(nzDisabled)]="item2.disabled">{{item2.label}}</label></div>
+                    </ng-container>                
+                </div>
+            </div>
+        </ng-container>
+        </nz-checkbox-wrapper>
+    </div>
+</div>
+    
